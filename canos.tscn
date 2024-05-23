@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="CylinderMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 0.721569, 0.266667, 1 )
+
+[sub_resource type="CylinderMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="CylinderMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = true
+
+[sub_resource type="CylinderShape" id=7]
+radius = 1.04216
+height = 2.45391
+
+[node name="canos" type="Spatial"]
+
+[node name="cano1" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.37, 0 )
+
+[node name="CSGMesh" type="CSGMesh" parent="cano1"]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 1, -0.0593786, 7.28611, -0.0832107 )
+mesh = SubResource( 1 )
+material = SubResource( 2 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="cano1"]
+transform = Transform( 1.4, 0, 0, 0, 0.5, 0, 0, 0, 1.4, 0.0203948, 12.8006, -0.0729502 )
+mesh = SubResource( 3 )
+material = SubResource( 4 )
+
+[node name="CSGMesh3" type="CSGMesh" parent="cano1"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.0200874, 12.9146, -0.0559943 )
+operation = 2
+mesh = SubResource( 5 )
+material = SubResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="cano1"]
+transform = Transform( 1, 0, 0, 0, 4.99976, 0.00972133, 0, -0.0486067, 0.999953, -0.0432076, 7.29693, 0.0508585 )
+shape = SubResource( 7 )
+
+[node name="cano2" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.37, 0 )
+
+[node name="CSGMesh" type="CSGMesh" parent="cano2"]
+transform = Transform( 1, 0, 0, 0, 5, 0, 0, 0, 1, -0.0593786, 7.28611, -0.0832107 )
+mesh = SubResource( 1 )
+material = SubResource( 2 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="cano2"]
+transform = Transform( 1.4, 0, 0, 0, 0.5, 0, 0, 0, 1.4, 0.0203948, 12.8006, -0.0729502 )
+mesh = SubResource( 3 )
+material = SubResource( 4 )
+
+[node name="CSGMesh3" type="CSGMesh" parent="cano2"]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.0200874, 12.9146, -0.0559943 )
+operation = 2
+mesh = SubResource( 5 )
+material = SubResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="cano2"]
+transform = Transform( 1, 0, 0, 0, 4.99976, 0.00972133, 0, -0.0486067, 0.999953, -0.0432076, 7.29693, 0.0508585 )
+shape = SubResource( 7 )
